@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multistepform</title>
+  </head>
+  <body class="bg-[#f0f6ff]">
+    <div class="md:min-h-screen md:flex md:items-center md:justify-center">
+      <div class="md:w-[940px] md:h-[600px] md:bg-white md:rounded-2xl md:p-4 md:flex">
+        <header>
+          <div class="flex p-10 justify-center gap-5 bg-[url('/bg-sidebar-mobile.f8e29a05.svg')] bg-center bg-contain bg-no-repeat w-[430px] h-[240px] bg-top md:w-[274px] md:h-[568px] md:bg-[url('/bg-sidebar-desktop.svg')] md:bg-cover md:bg-left-top md:rounded-xl md:flex-col md:justify-start md:gap-7 md:p-8">
+            <div class="flex items-center gap-4">
+              <button class="w-[37px] h-[37px] rounded-full border border-[#BFE2fd] text-[#BFE2fd] hover:text-[#02295a] hover:bg-[#BFE2fd]">1</button>
+              <div class="hidden md:block text-white">
+                <p class="text-xs">STEP 1</p>
+                <p class="font-bold">YOUR INFO</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <button class="w-[37px] h-[37px] rounded-full border border-[#BFE2fd] text-[#BFE2fd] hover:text-[#02295a] hover:bg-[#BFE2fd]">2</button>
+              <div class="hidden md:block text-white">
+                <p class="text-xs">STEP 2</p>
+                <p class="font-bold">SELECT PLAN</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <button class="w-[37px] h-[37px] rounded-full border border-[#BFE2fd] text-[#BFE2fd] hover:text-[#02295a] hover:bg-[#BFE2fd]">3</button>
+              <div class="hidden md:block text-white">
+                <p class="text-xs">STEP 3</p>
+                <p class="font-bold">ADD-ONS</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <button class="w-[37px] h-[37px] rounded-full border border-[#BFE2fd] text-[#BFE2fd] hover:text-[#02295a] hover:bg-[#BFE2fd]">4</button>
+              <div class="hidden md:block text-white">
+                <p class="text-xs">STEP 4</p>
+                <p class="font-bold">SUMMARY</p>
+              </div>
+            </div>
+          </div>
+        </header>
+        <main class="md:flex-1 md:relative">
+          <div class="relative -top-34 ml-5 bg-white h-[385px] w-[390px] rounded-2xl justify-center p-4 md:top-0 md:ml-0 md:w-full md:h-[568px] md:rounded-none md:p-12">
+            <h1 class="text-2xl font-bold">Personal info</h1>
+            <p class="text-gray-500">
+              Please provide your name, email, address, and phone number.</p>
+            <h4 class="mt-6">name</h4>
+            <input type="text" placeholder="e.g.stephen king" class="border border-gray-500 w-[360px] h-[41px] rounded-2xl px-3 md:w-full">
+            <h4 class="mt-6">Email Address</h4>
+            <input type="text" placeholder="e.g. Stephenking@lorem.com" class="border border-gray-500 w-[360px] h-[41px] rounded-2xl px-3 md:w-full">
+            <h4 class="mt-6">Phone Number</h4>
+            <input type="text" placeholder="e.g. +1 234 567 890" class="border border-gray-500 w-[360px] h-[41px] rounded-2xl px-3 md:w-full">
+            <div class="flex justify-end mt-30">
+              <button class="w-[112px] h-[47px] rounded-2xl bg-[#02295a] text-white">
+                Next Step
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
