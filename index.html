@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>multistepform</title>
-  </head>
-<body class="bg-[#f0f6ff]">
-  <div class="md:min-h-screen md:flex md:items-center md:justify-center">
-    <div class="md:w-[940px] md:h-[600px] md:bg-white md:rounded-2xl md:p-4 md:flex" id="app">
-      <header id="sidebar">
-        <div class="flex p-10 justify-center gap-5 bg-[url('/bg-sidebar-mobile.f8e29a05.svg')] bg-center bg-contain bg-no-repeat w-[430px] h-[240px] bg-top md:w-[274px] md:h-[568px] md:bg-[url('/bg-sidebar-desktop.svg')] md:bg-cover md:bg-left-top md:rounded-xl md:flex-col md:justify-start md:gap-7 md:p-8">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>multistepform</title>
+</head>
+<body class="bg-[#f0f6ff] min-h-screen">
+  <div class="min-h-screen md:flex md:items-center md:justify-center">
+    <div id="app" class="w-full min-h-screen md:w-[940px] md:h-[600px] md:min-h-0 md:bg-white md:rounded-2xl md:p-4 md:flex">
+      <header id="sidebar" class="w-full md:w-auto">
+        <div class="flex justify-center gap-8 pt-8 bg-[url('/bg-sidebar-mobile.f8e29a05.svg')] bg-cover bg-center bg-no-repeat w-full h-[172px] md:w-[274px] md:h-[568px] md:bg-[url('/bg-sidebar-desktop.svg')] md:bg-cover md:bg-left-top md:rounded-xl md:flex-col md:justify-start md:gap-7 md:p-8">
           <div class="flex gap-4" id="step-container-1">
             <button id="step-1" type="button" class="w-[37px] h-[37px] rounded-full border border-[#BFE2fd] text-[#BFE2fd] hover:text-[#02295a] hover:bg-[#BFE2fd]">1</button>
             <div class="hidden md:block text-white">
@@ -41,60 +41,75 @@
           </div>
         </div>
       </header>
-      <main class="md:flex-1 md:relative" id="main">
-        <div id="step-content-1" class="relative -top-30 ml-5 bg-white h-[385px] w-[390px] rounded-2xl justify-center p-4 md:top-0 md:ml-0 md:w-full md:h-[568px] md:rounded-none md:p-12">
-          <h1 class="text-2xl font-bold">Personal info</h1>
-          <p class="text-gray-500">
-            Please provide your name, email, address, and phone number.
+      <main id="main" class="w-full flex-1 relative">
+        <div id="step-content-1" class="relative -mt-8 mx-4 bg-white rounded-2xl p-6 min-h-[430px] md:relative md:mt-0 md:mx-0 md:bg-transparent md:rounded-none md:p-12 md:min-h-0 md:h-[568px]">
+          <h1 class="text-2xl font-bold text-[#02295a]">Personal info</h1>
+          <p class="text-gray-500 mt-2">
+            Please provide your name, email address, and phone number.
           </p>
-          <h4 class="mt-6">name</h4>
-          <input id="name" type="text" placeholder="e.g.stephen king" class="border border-gray-500 w-[360px] h-[41px] rounded-2xl px-3 md:w-full">
-          <h4 class="mt-6">Email Address</h4>
-          <input id="email" type="text" placeholder="e.g. Stephenking@lorem.com" class="border border-gray-500 w-[360px] h-[41px] rounded-2xl px-3 md:w-full">
-          <h4 class="mt-6">Phone Number</h4>
-          <input id="phone" type="text" placeholder="e.g. +1 234 567 890" class="border border-gray-500 w-[360px] h-[41px] rounded-2xl px-3 md:w-full">
-          <div class="flex justify-end mt-30">
-            <button id="next-btn" type="button" class="w-[112px] h-[47px] rounded-2xl bg-[#02295a] text-white">
+          <h4 class="mt-6 text-[#02295a]">Name</h4>
+          <input id="name" type="text" placeholder="e.g. Stephen King" class="border border-gray-400 w-full h-[45px] rounded-lg px-3 mt-2 focus:outline-none focus:border-[#483eff]" />
+          <h4 class="mt-5 text-[#02295a]">Email Address</h4>
+          <input id="email" type="text" placeholder="e.g. stephenking@lorem.com" class="border border-gray-400 w-full h-[45px] rounded-lg px-3 mt-2 focus:outline-none focus:border-[#483eff]" />
+          <h4 class="mt-5 text-[#02295a]">Phone Number</h4>
+          <input id="phone" type="text" placeholder="e.g. +1 234 567 890" class="border border-gray-400 w-full h-[45px] rounded-lg px-3 mt-2 focus:outline-none focus:border-[#483eff]" />
+          <div class="flex justify-end mt-8 md:absolute md:bottom-8 md:right-12">
+            <button id="next-btn" type="button" class="w-[112px] h-[47px] rounded-lg bg-[#02295a] text-white">
               Next Step
             </button>
           </div>
         </div>
-        <div id="step-content-2" class="hidden md:p-12">
-          <h1 class="text-2xl font-bold">Select your plan</h1>
-          <p class="text-gray-500">
+        <div id="step-content-2" class="hidden bg-white rounded-2xl p-6 mx-4 -mt-8 md:mt-0 md:mx-0 md:bg-transparent md:rounded-none md:p-12">
+          <h1 class="text-2xl font-bold text-[#02295a]">
+            Select your plan
+          </h1>
+          <p class="text-gray-500 mt-2">
             You have the option of monthly or yearly billing.
           </p>
-          <div id="plans" class="flex gap-3 mt-8">
-            <button id="plan-arcade" type="button" class="border border-[#d6d9e6] rounded-xl p-4 w-[178px] h-[184px]">
-              <img src="img/icon-arcade.e118291f (1).svg" alt="arcade" class="relative w-[40px] h-[40px] bottom-8">
-              <p class="font-bold mr-40">Arcade</p>
-              <p class="text-gray-500 mr-40">$9/mo</p>
+          <div id="plans" class="flex flex-col gap-3 mt-8 md:flex-row md:gap-3">
+            <button id="plan-arcade" type="button" class="border border-[#d6d9e6] rounded-xl p-4 w-full h-[105px] flex items-center gap-4 text-left md:w-[178px] md:h-[184px] md:block">
+              <img src="img/icon-arcade.e118291f (1).svg" alt="arcade" class="w-[40px] h-[40px] md:mb-8" />
+              <div>
+                <p class="font-bold text-[#02295a]">Arcade</p>
+                <p id="arcade-price" class="text-gray-500">$9/mo</p>
+                <p id="arcade-free" class="hidden text-xs font-medium text-[#02295a] mt-1">2 months free</p>
+              </div>
             </button>
-            <button id="plan-advanced" type="button" class="border border-[#d6d9e6] rounded-xl p-4 w-[178px] h-[184px]">
-              <img src="img/icon-advanced.66ce2237.svg" alt="advanced" class="relative w-[40px] h-[40px] bottom-8">
-              <p class="font-bold mr-40">Advanced</p>
-              <p class="text-gray-500 mr-40">$12/mo</p>
+            <button id="plan-advanced" type="button" class="border border-[#d6d9e6] rounded-xl p-4 w-full h-[105px] flex items-center gap-4 text-left md:w-[178px] md:h-[184px] md:block">
+              <img src="img/icon-advanced.66ce2237.svg" alt="advanced" class="w-[40px] h-[40px] md:mb-8" />
+              <div>
+                <p class="font-bold text-[#02295a]">Advanced</p>
+                <p id="advanced-price" class="text-gray-500">$12/mo</p>
+                <p id="advanced-free" class="hidden text-xs font-medium text-[#02295a] mt-1">2 months free</p>
+              </div>
             </button>
-            <button id="plan-pro" type="button" class="border border-[#d6d9e6] rounded-xl p-4 w-[178px] h-[184px]">
-              <img src="img/icon-pro.8d9f4718.svg" alt="pro" class="relative w-[40px] h-[40px] bottom-8" >
-              <p class="font-bold mr-40">Pro</p>
-              <p class="text-gray-500 mr-40">$15/mo</p>
+            <button id="plan-pro" type="button" class="border border-[#d6d9e6] rounded-xl p-4 w-full h-[105px] flex items-center gap-4 text-left md:w-[178px] md:h-[184px] md:block">
+              <img src="img/icon-pro.8d9f4718.svg" alt="pro" class="w-[40px] h-[40px] md:mb-8" />
+              <div>
+                <p class="font-bold text-[#02295a]">Pro</p>
+                <p id="pro-price" class="text-gray-500">$15/mo</p>
+                <p id="pro-free" class="hidden text-xs font-medium text-[#02295a] mt-1">2 months free</p>
+              </div>
             </button>
           </div>
-          <div class="flex justify-center gap-3 mt-8 bg-[#f0f6ff] p-3 rounded-xl">
-            <span>Monthly</span>
-            <button id="billing-toggle" type="button" class="w-[40px] h-[20px] bg-[#02295a] rounded-full">
-              <span class="block w-[14px] h-[14px] bg-white rounded-full ml-1"></span>
+          <div class="flex justify-center items-center gap-4 mt-8 bg-[#f0f6ff] p-4 rounded-xl">
+            <span id="monthly-label" class="font-bold text-[#02295a]">
+              Monthly
+            </span>
+            <button id="billing-toggle" type="button" class="w-[44px] h-[24px] bg-[#02295a] rounded-full p-1">
+              <span id="billing-circle" class="block w-[16px] h-[16px] bg-white rounded-full transition-transform duration-200"></span>
             </button>
-            <span>Yearly</span>
+            <span id="yearly-label" class="text-gray-500">
+              Yearly
+            </span>
           </div>
-          <div class="flex justify-end mt-25">
-            <button id="next-btn" type="button" class="w-[112px] h-[47px] rounded-2xl bg-[#02295a] text-white">
+          <div class="flex justify-end mt-8 md:mt-24">
+            <button id="next-btn-2" type="button" class="w-[112px] h-[47px] rounded-lg bg-[#02295a] text-white">
               Next Step
             </button>
           </div>
         </div>
-        <div id="step-content-3" class="hidden md:p-12">
+        <div id="step-content-3" class="hidden bg-white rounded-2xl p-6 mx-4 -mt-8 md:mt-0 md:mx-0 md:bg-transparent md:rounded-none md:p-12">
           <h1 class="text-2xl font-bold text-[#02295a]">
             Pick add-ons
           </h1>
@@ -102,38 +117,59 @@
             Add-ons help enhance your gaming experience.
           </p>
           <div class="mt-8 space-y-4">
-            <label id="addon-online" class="flex items-center gap-4 border border-[#d6d9e6] rounded-xl p-4 cursor-pointer">
-              <input id="online-service" type="checkbox" class="w-5 h-5">
+            <label id="addon-online" class="flex items-center gap-4 border border-[#d6d9e6] rounded-xl p-4 cursor-pointer hover:border-[#483eff]">
+              <input id="online-service" type="checkbox" class="w-5 h-5 accent-[#483eff]" />
               <div class="flex-1">
-                <p class="font-bold text-[#02295a]">Online service</p>
-                <p class="text-gray-500 text-sm">Access to multiplayer games</p>
+                <p class="font-bold text-[#02295a]">
+                  Online service
+                </p>
+                <p class="text-gray-500 text-sm">
+                  Access to multiplayer games
+                </p>
               </div>
-              <span class="text-[#483eff]">+$1/mo</span>
+              <span id="online-price" class="text-[#483eff]">
+                +$1/mo
+              </span>
             </label>
-            <label id="addon-storage" class="flex items-center gap-4 border border-[#d6d9e6] rounded-xl p-4 cursor-pointer">
-              <input id="larger-storage" type="checkbox" class="w-5 h-5">
+            <label id="addon-storage" class="flex items-center gap-4 border border-[#d6d9e6] rounded-xl p-4 cursor-pointer hover:border-[#483eff]">
+              <input id="larger-storage" type="checkbox" class="w-5 h-5 accent-[#483eff]" />
               <div class="flex-1">
-                <p class="font-bold text-[#02295a]">Larger storage</p>
-                <p class="text-gray-500 text-sm">Extra 1TB of cloud save</p>
+                <p class="font-bold text-[#02295a]">
+                  Larger storage
+                </p>
+                <p class="text-gray-500 text-sm">
+                  Extra 1TB of cloud save
+                </p>
               </div>
-              <span class="text-[#483eff]">+$2/mo</span>
+              <span id="storage-price" class="text-[#483eff]">
+                +$2/mo
+              </span>
             </label>
-            <label id="addon-profile" class="flex items-center gap-4 border border-[#d6d9e6] rounded-xl p-4 cursor-pointer">
-              <input id="custom-profile" type="checkbox" class="w-5 h-5">
+            <label id="addon-profile" class="flex items-center gap-4 border border-[#d6d9e6] rounded-xl p-4 cursor-pointer hover:border-[#483eff]">
+              <input id="custom-profile" type="checkbox" class="w-5 h-5 accent-[#483eff]" />
               <div class="flex-1">
-                <p class="font-bold text-[#02295a]">Customizable profile</p>
-                <p class="text-gray-500 text-sm">Custom theme on your profile</p>
+                <p class="font-bold text-[#02295a]">
+                  Customizable profile
+                </p>
+                <p class="text-gray-500 text-sm">
+                  Custom theme on your profile
+                </p>
               </div>
-              <span class="text-[#483eff]">+$2/mo</span>
+              <span id="profile-price" class="text-[#483eff]">
+                +$2/mo
+              </span>
             </label>
           </div>
-          <div class="flex justify-end mt-25">
-            <button id="next-btn" type="button" class="w-[112px] h-[47px] rounded-2xl bg-[#02295a] text-white">
+          <div class="flex justify-between items-center mt-8 md:mt-24">
+            <button id="back-btn-3" type="button" class="text-gray-500">
+              Go Back
+            </button>
+            <button id="next-btn-3" type="button" class="w-[112px] h-[47px] rounded-lg bg-[#02295a] text-white">
               Next Step
             </button>
           </div>
         </div>
-        <div id="step-content-4" class="hidden md:p-12">
+        <div id="step-content-4" class="hidden bg-white rounded-2xl p-6 mx-4 -mt-8 md:mt-0 md:mx-0 md:bg-transparent md:rounded-none md:p-12">
           <h1 class="text-2xl font-bold text-[#02295a]">
             Finishing up
           </h1>
@@ -155,7 +191,7 @@
               </span>
             </div>
             <div class="mt-4 space-y-3">
-              <div class="flex justify-between">
+              <div id="summary-online-row" class="flex justify-between">
                 <span id="summary-online" class="text-gray-500">
                   Online service
                 </span>
@@ -163,7 +199,7 @@
                   +$1/mo
                 </span>
               </div>
-              <div class="flex justify-between">
+              <div id="summary-storage-row" class="flex justify-between">
                 <span id="summary-storage" class="text-gray-500">
                   Larger storage
                 </span>
@@ -171,7 +207,7 @@
                   +$2/mo
                 </span>
               </div>
-              <div class="flex justify-between">
+              <div id="summary-profile-row" class="flex justify-between">
                 <span id="summary-profile" class="text-gray-500">
                   Customizable profile
                 </span>
@@ -189,21 +225,36 @@
               $9/mo
             </span>
           </div>
-        </div>
-        <div class="flex justify-between items-center md:absolute md:bottom-8 md:left-12 md:right-12">
-          <button id="back-btn" type="button" class="hidden text-gray-500">
-            Go Back
-          </button>
-        </div>
-        <div class="flex justify-end mt-25">
-            <button id="next-btn" type="button" class="w-[112px] h-[47px] rounded-2xl bg-[#02295a] text-white">
-              confrim
+          <div class="flex justify-between items-center mt-8 md:mt-24">
+            <button id="back-btn-4" type="button" class="text-gray-500">
+              Go Back
+            </button>
+            <button id="confirm-btn" type="button" class="w-[112px] h-[47px] rounded-lg bg-[#02295a] text-white">
+              Confirm
             </button>
           </div>
+        </div>
+        <div id="mobile-buttons" class="hidden">
+          <button id="back-btn" type="button" class="text-gray-500">
+            Go Back
+          </button>
+          <button id="next-btn" type="button" class="w-[112px] h-[47px] rounded-lg bg-[#02295a] text-white">
+            Next Step
+          </button>
+        </div>
+        </div>
+<div id="thank-you" class="hidden h-full w-full flex-col items-center justify-center text-center p-8">
+  <img src="/img/icon-thank-you.svg" alt="Thank you" class="w-16 h-16 mb-6">
+  <h1 class="text-3xl font-bold text-[#02295a]">Thank you!</h1>
+  <p class="text-gray-500 mt-4 max-w-md">
+    Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us.
+  </p>
+</div>
       </main>
     </div>
   </div>
+  </div>
+  </div>
+  <script type="module" src="/src/main.ts"></script>
 </body>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
 </html>
