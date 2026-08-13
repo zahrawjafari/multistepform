@@ -12,15 +12,15 @@ const step3 = document.querySelector<HTMLElement>("#step-content-3")!;
 const step4 = document.querySelector<HTMLElement>("#step-content-4")!;
 const thankYou = document.querySelector<HTMLElement>("#thank-you")!;
 const steps: HTMLElement[] = [step1, step2, step3, step4];
-const step1Btn = document.querySelector<HTMLButtonElement>("#step-1")!;
-const step2Btn = document.querySelector<HTMLButtonElement>("#step-2")!;
-const step3Btn = document.querySelector<HTMLButtonElement>("#step-3")!;
-const step4Btn = document.querySelector<HTMLButtonElement>("#step-4")!;
 const nextBtn = document.querySelector<HTMLButtonElement>("#next-btn")!;
 const nextBtn2 = document.querySelector<HTMLButtonElement>("#next-btn-2")!;
 const nextBtn3 = document.querySelector<HTMLButtonElement>("#next-btn-3")!;
 const backBtn3 = document.querySelector<HTMLButtonElement>("#back-btn-3")!;
 const backBtn4 = document.querySelector<HTMLButtonElement>("#back-btn-4")!;
+const step1Btn = document.querySelector<HTMLButtonElement>("#step-1")!;
+const step2Btn = document.querySelector<HTMLButtonElement>("#step-2")!;
+const step3Btn = document.querySelector<HTMLButtonElement>("#step-3")!;
+const step4Btn = document.querySelector<HTMLButtonElement>("#step-4")!;
 const confirmBtn = document.querySelector<HTMLButtonElement>("#confirm-btn")!;
 function showStep(step: number): void {
   steps.forEach((item) => {
@@ -30,13 +30,13 @@ function showStep(step: number): void {
   steps[step - 1].classList.remove("hidden");
   currentStep = step;
 }
-showStep(1);
-function validateStep1(): boolean {
+function validatePersonalInfo(): boolean {
   const name = document.querySelector<HTMLInputElement>("#name")!;
   const email = document.querySelector<HTMLInputElement>("#email")!;
   const phone = document.querySelector<HTMLInputElement>("#phone")!;
+  const inputs = [name, email, phone];
   let valid = true;
-  [name, email, phone].forEach((input) => {
+  inputs.forEach((input) => {
     input.classList.remove("border-red-500");
     if (input.value.trim() === "") {
       input.classList.add("border-red-500");
@@ -46,7 +46,7 @@ function validateStep1(): boolean {
   return valid;
 }
 nextBtn.addEventListener("click", () => {
-  if (!validateStep1()) {
+  if (!validatePersonalInfo()) {
     return;
   }
   showStep(2);
@@ -55,6 +55,10 @@ nextBtn2.addEventListener("click", () => {
   showStep(3);
 });
 nextBtn3.addEventListener("click", () => {
+  if (!validatePersonalInfo()) {
+    showStep(1);
+    return;
+  }
   updateSummary();
   showStep(4);
 });
@@ -68,12 +72,24 @@ step1Btn.addEventListener("click", () => {
   showStep(1);
 });
 step2Btn.addEventListener("click", () => {
+  if (!validatePersonalInfo()) {
+    showStep(1);
+    return;
+  }
   showStep(2);
 });
 step3Btn.addEventListener("click", () => {
+  if (!validatePersonalInfo()) {
+    showStep(1);
+    return;
+  }
   showStep(3);
 });
 step4Btn.addEventListener("click", () => {
+  if (!validatePersonalInfo()) {
+    showStep(1);
+    return;
+  }
   updateSummary();
   showStep(4);
 });
@@ -81,7 +97,7 @@ const arcadeBtn = document.querySelector<HTMLButtonElement>("#plan-arcade")!;
 const advancedBtn =
   document.querySelector<HTMLButtonElement>("#plan-advanced")!;
 const proBtn = document.querySelector<HTMLButtonElement>("#plan-pro")!;
-const planButtons: HTMLButtonElement[] = [arcadeBtn, advancedBtn, proBtn];
+const planButtons = [arcadeBtn, advancedBtn, proBtn];
 const billingToggle =
   document.querySelector<HTMLButtonElement>("#billing-toggle")!;
 const billingCircle =
@@ -238,7 +254,12 @@ changePlan.addEventListener("click", () => {
   showStep(2);
 });
 confirmBtn.addEventListener("click", () => {
+  if (!validatePersonalInfo()) {
+    showStep(1);
+    return;
+  }
   step4.classList.add("hidden");
   thankYou.classList.remove("hidden");
 });
 updateSummary();
+showStep(1);
